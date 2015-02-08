@@ -8,6 +8,7 @@
   </a>
   <ul class="notification dropdown-menu">
     {{#if notificationCount}}
+      <li><a href='#' class="clear-notifications">Clear all</a></li>
       {{#each notifications}}
         {{> notificationItem}}
       {{/each}}

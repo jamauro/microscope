@@ -162,3 +162,7 @@ body {
   margin-bottom: 5px;
   pointer-events: auto;
 }
+
+.dropdown-menu > li > a.clear-notifications {
+  color: #999;
+}

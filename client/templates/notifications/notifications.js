@@ -7,6 +7,14 @@ Template.notifications.helpers({
   }
 });
 
+Template.notifications.events({
+  'click .clear-notifications': function() {
+    Notifications.find({userId: Meteor.userId()}).forEach(function(notification) {
+      Notifications.update(notification._id, {$set: {read: true}});
+    });
+  }
+});
+
 Template.notificationItem.helpers({
   notificationPostPath: function() {
     return Router.routes.postPage.path({_id: this.postId});
