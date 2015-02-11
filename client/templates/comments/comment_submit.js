@@ -1,5 +1,10 @@
 Template.commentSubmit.created = function() {
   Session.set('commentSubmitErrors', {});
+  var users = Meteor.users.find().fetch();
+  $("#body").mention({
+    delimiter: '@',
+    users: users
+  });
 }
 
 Template.commentSubmit.helpers({
